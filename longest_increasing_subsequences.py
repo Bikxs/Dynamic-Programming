@@ -26,13 +26,14 @@ def LIS(input: List[int]):
 def tabulated(iRange, input, L):
     headers = ['i'] + iRange
     table = [['a'] + input, ['L'] + L]
-    print(tabulate(table, headers=headers,showindex=True,tablefmt="grid"))
+    print(tabulate(table, headers=headers,tablefmt="grid"))
 
 
 def test():
     print("\tLIS: Longest Increasing subsequence")
     # testPasses([], 0)
     testPasses([5, 7, 4, -3, 9, 1, 10, 4, 5, 8, 9, 3], 6)
+    print(f"{'-' * 200}")
 
 
 def testPasses(input, expectedOutput):

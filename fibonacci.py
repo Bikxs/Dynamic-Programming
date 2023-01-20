@@ -23,7 +23,7 @@ def FIB(input: int):
 def tabulated(iRange, L):
     headers = ['i'] + iRange
     table = [['L'] + L]
-    print(tabulate(table, headers=headers, showindex=True, tablefmt="grid"))
+    print(tabulate(table, headers=headers, tablefmt="grid"))
 
 
 def test():
@@ -33,6 +33,7 @@ def test():
     # testPasses(3, 2)
     testPasses(15, 610)
     # testPasses(49, 7778742049)
+    print(f"{'-' * 200}")
 
 
 def testPasses(input, expectedOutput):
