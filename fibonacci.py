@@ -8,16 +8,16 @@ The sequence has many interesting properties and appears in many areas of mathem
 from tabulate import tabulate
 
 
-def fn(input: int):
+def FIB(input: int):
     iRange = list(range(1, input + 1))
-    FIB = []
+    L = []
     for i in iRange:
         if i <= 2:
-            FIB.append(1)
+            L.append(1)
         else:
-            FIB.append(FIB[-2] + FIB[-1])
-    tabulated(iRange, FIB)
-    return FIB[-1]
+            L.append(L[-2] + L[-1])
+    tabulated(iRange, L)
+    return L[-1]
 
 
 def tabulated(iRange, L):
@@ -36,7 +36,7 @@ def test():
 
 
 def testPasses(input, expectedOutput):
-    output = fn(input)
+    output = FIB(input)
     print()
     if (output == expectedOutput):
         print(f"\t\tPass FIB({input})=={expectedOutput} ")
