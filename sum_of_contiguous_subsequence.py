@@ -22,14 +22,14 @@ def SCS(input: List[int]):
     L = [0]
     for i in iRange:
         if i == 0: continue
-        L.append(max(0,L[i-1] + input[i-1]))
+        L.append(max(0, L[i - 1] + input[i - 1]))
     tabulated(iRange, input, L)
-    return L[-1]
+    return max(L)
 
 
 def tabulated(iRange, input, L):
     headers = ['i'] + iRange
-    table = [['a',0,] + input, ['L'] + L]
+    table = [['a', 0, ] + input, ['L'] + L]
     print(tabulate(table, headers=headers, tablefmt="grid"))
 
 
@@ -37,6 +37,7 @@ def test():
     print("\tSCS: Sum of contiguous subsequence")
     # testPasses([], 0)
     testPasses([5, 15, -30, 10, -5, 40, 10], 55)
+    testPasses([5, 40, 15, -60, 10, -5, 40, 10], 60)
     print(f"{'-' * 200}")
 
 
